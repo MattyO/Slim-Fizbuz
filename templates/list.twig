@@ -1,0 +1,46 @@
+{% extends "main.twig" %}
+
+{% block content %}
+
+    <h1> <form> FizBuz from <input type="text" class="span1 header-input"> to <input type="text" class="span1 header-input"> <input type="submit" value="Lookup" class="btn"> </form> </h1>
+    
+	<div class="row">
+		<form action="" class="span4">
+			<p> List numbers </p>
+			<label> From </label> <input type="text">
+			<label> To </label> <input type="text"> 
+		</form>
+		
+		<form action="" class="span4">
+			<p> Lookup a single number </p>
+			<input type="text">	
+		</form>
+		
+	</div>
+    <div class="row">
+		
+		<div class="span8">
+		    <table class="table table-bordered"> 
+		    <tr> 
+			    <th> The Number </th> <th> FizBuz, Fiz, Buz, or just a number?</th>
+			</tr>
+			{% for number in numbers %}
+				<tr> 
+					<td> {{number}} </td> <td> {{number.getDescription()}}</td>
+				</tr>
+			{% endfor %}
+			</table>
+		</div>
+		
+	   	<div class="span4">
+		    <p> <b> The Rules</b> </p>
+		    <ul>
+		    	<li> Ever number divisiable by 3 is a fiz </li>
+		    	<li> Ever number divisiable by 5 is a fiz </li>
+		    	<li> Ever number divisiable by 3 and 5 is a fizbuz</li>
+		    </ul>
+	    </div>
+	</div>
+	</div>
+	
+{% endblock %}
